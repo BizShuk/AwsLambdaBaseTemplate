@@ -1,6 +1,5 @@
 package aws.lambda.base.context;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Hashtable;
@@ -10,9 +9,7 @@ import aws.lambda.base.constants.ExceptionConstants;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class LambdaContext implements Serializable {
-
-    private static final long serialVersionUID = 1L;
+public class LambdaContext {
 
     private final Map<String, String> env;
     protected final Map<String, Object> bindings;
