@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
+
 import aws.lambda.base.constants.ExceptionConstants;
 import lombok.extern.slf4j.Slf4j;
 
@@ -28,7 +29,6 @@ public class LambdaContext {
     public static LambdaContext getInstance() {
         return LambdaContextHelper.ctx;
     }
-
 
     public LambdaContext() {
         log.info("Init LambdaContext...");

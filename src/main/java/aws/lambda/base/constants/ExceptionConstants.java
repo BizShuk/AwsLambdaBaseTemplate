@@ -6,8 +6,5 @@ public final class ExceptionConstants {
         throw ILLEGAL_STATE_EXCEPTION;
     }
 
-
-    public static final IllegalStateException ILLEGAL_STATE_EXCEPTION =
-            new IllegalStateException("Utility class");
-
+    public static final IllegalStateException ILLEGAL_STATE_EXCEPTION = new IllegalStateException("Utility class");
 }

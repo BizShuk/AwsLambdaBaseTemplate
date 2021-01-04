@@ -2,6 +2,7 @@ package aws.lambda.base;
 
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
+
 import aws.lambda.base.config.LambdaConfig;
 import aws.lambda.base.config.LambdaConfig.Components;
 import aws.lambda.base.context.LambdaContext;
@@ -13,8 +14,7 @@ public abstract class AbstractLambdaTemplate<E, R> implements RequestHandler<E, 
 
     public R handleRequest(E event, Context context) {
         try {
-            LambdaConfig.init(context, getProductName(), getSecretList(),
-                    getSelectedComponentList());
+            LambdaConfig.init(context, getProductName(), getSecretList(), getSelectedComponentList());
             ctx = LambdaContext.getInstance();
             bindComponent(context);
             return handleService(event, context);
@@ -29,7 +29,8 @@ public abstract class AbstractLambdaTemplate<E, R> implements RequestHandler<E, 
 
     protected abstract R handleService(E event, Context context) throws Exception;
 
-    // Construct a String array with substitute key ${keyname} which will be replace from env
+    // Construct a String array with substitute key ${keyname} which will be replace
+    // from env
     // variables.
     protected abstract String[] getSecretList();
 
