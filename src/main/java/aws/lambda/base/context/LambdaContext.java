@@ -63,7 +63,7 @@ public class LambdaContext {
         dbSecret = secret;
     }
 
-    public Map<String, Object> getDbSecreMap() {
+    public Map<String, Object> getDbSecret() {
         return dbSecret;
     }
 
