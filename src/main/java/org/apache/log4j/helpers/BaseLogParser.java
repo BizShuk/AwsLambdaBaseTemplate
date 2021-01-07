@@ -5,7 +5,7 @@ import org.apache.log4j.spi.LoggingEvent;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class CustomizedParser extends PatternParser {
+public class BaseLogParser extends PatternParser {
     private String profile = "L";
 
     private static final char PROD_CHAR = 'P';
@@ -17,7 +17,7 @@ public class CustomizedParser extends PatternParser {
     private static final char PROFILE_CHAR = 'P';
     private static final char SEVERITY_CHAR = 'N';
 
-    public CustomizedParser(String pattern) {
+    public BaseLogParser(String pattern) {
         super(pattern);
         String profileProp = System.getenv("profile");
 
